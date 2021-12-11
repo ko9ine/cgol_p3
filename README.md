@@ -1,5 +1,5 @@
 # cgol_p3
-Conway's game of life | HTML5
+Conway's game of life | JS
 
 Autómata celular desarrollado en JavaScript & HTML5 en 2020.
 Edición de idioma 12/2021 debido a que es archivo contributivo para explicación de Parcial de Gestión de Proyectos. 
