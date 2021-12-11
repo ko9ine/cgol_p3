@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<meta name="description" content="Una implementación colorida de
+El juego de la vida de Conway en Javascript, usando funciones HTML5 como Canvas
+y localStorage. También funciona bien en el iPad, como una aplicación sin conexión." />
+
+<meta name="keywords" content="life, game of life, conway,
+cellular automata, CAs, HTML5, Canvas, offline, localStorage" />
+
+<title>Juego de la Vida</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="glider-icon.png" />
+
+
+<meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width" />
+
+
+<meta name="format-detection" content="telephone=no" />
+
+
+<script src="js/log4javascript.js"></script>
+
+<link type="text/css"
+href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.ui.js"></script>
+<script src="js/jquery.ui.ipad.js"></script>
+
+
+<link type="text/css" href="css/farbtastic.css" rel="stylesheet" />
+<script src="js/farbtastic.js"></script>
+
+
+<link type="text/css"
+href="css/life.css" rel="stylesheet" />
+</head>
+
+<body>
+<noscript>
+  Este programa requiere javascript.
+  <style>
+    div {display: none;}
+  </style>
+</noscript>
+
+<div id="controls">
+  <div id="buttons">
+    <input type="button" id="tick" value="Paso" />
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="Stop" />
+    <input type="button" id="reset" value="Reset" />
+    <input type="button" id="show-settings" value="Settings" />
+  </div>
+  <div id="speed"><span id="speed-label">Velocidad:</span> <div id="speed-slider"></div></div>
+</div>
+
+<div id="status-display">
+  <span id="speed-display">Ping: <span id="speed-val"></span></span>
+  <span id="generation-display">Generación: <span id="generation"></span></span>
+  <span id="status">Pausado</span>
+</div>
+
+<div id="grid-div"></div>
+
+<div id="panels" title="Configuración">
+  <h3><a href="#">Color</a></h3>
+  <div id="colour-panel">
+    ¿Cuántas generaciones de color quieres? <span class="small">(desliza para cambiar)</span>
+    <div id="no-of-colours-slider"></div>
+    <div id="colour-pickers">
+      <table>
+      </table>
+    </div>
+    <div id="colour-picker"></div>
+    <div id="swatch-tip">Haga clic para cambiar el color</div>
+  </div>
+
+  <h3><a href="#">Cuadrícula</a></h3>
+  <div>
+    <div class="config-section">
+      <h4>Tamaño de la cuadrícula</h4>
+      Alto: <span id="height-display"></span>
+      <div id="height-slider"></div>
+
+      Ancho: <span id="width-display"></span>
+      <div id="width-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <h4>Tamaño de las celdas</h4>
+      <div id="cellSize-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <label for="wraparound-p">¿Desea envolver bordes?: </label>
+      <input type="checkbox" id="wraparound-p" />
+    </div>
+  </div>
+
+  <h3><a href="#">Reglas</a></h3>
+  <div>
+    La reglas que están vigentes:
+
+    <ul>
+    <li>Una célula nace si tiene tres vecinos.</li>
+    <li>Se mantiene viva si tiene 2 o 3 vecinas.</li>
+    <li>Muere de otra manera.</li>
+    </ul>
+  </div>
+</div>
+
+<script src="js/life.js"></script>
+</body>
+</html>
